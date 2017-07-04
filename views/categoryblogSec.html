@@ -1,0 +1,61 @@
+		       
+        <div class="container main">
+			
+            <div class="row">
+            
+            	<div class="col-sm-8">
+                	
+                    <div class="col-xs-12 categorylisting">
+                		<div class="widget-title-wrapper">
+                             <h3 class="block-title">{{postCAT}}</h3>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="col-sm-6 col-xs-12" ng-repeat="post in catblogLists">                        
+                                    <article class="blogPost blogDetails">
+                                            
+                                            <a href="#/{{post['post_id']}}"><img src="{{post['post_image']}}" class="img-thumbnail img-responsive"/></a>
+                                            <h3 class="header-title"><a href="#/{{post['post_id']}}">{{post['post_title']}}</a></h3>
+                                            <div class="inner-content">
+                                                <div class="body-post">{{post['post_body'] | limitTo:200}}...</div>        
+                                                <h5>
+                                                    <span class="pull-left">
+                                                            <i class="fa fa-clock-o"> {{post['post_date'] | date:"MMM d, yyyy"}}</i> 
+                                                            <i class="fa fa-tag cattag"> {{post['post_category']}}</i>
+                                                    </span>
+                                                </h5>
+                                                
+                                            </div>    
+                                    </article>
+                                </div>
+                       </div>         
+                                
+                        
+                    </div>    
+                        
+                        
+                   </div>
+                   
+                    <div class="col-sm-4">
+                 	
+                    	<div class="row">
+                        
+                        		<div class="col-xs-12 sidebar">   
+                                    <recentpost-sec></recentpost-sec>
+								</div>
+                        
+                                <div class="col-xs-12 sidebar">                                	
+                                    <category-sec></category-sec>
+                                 </div>
+                                 
+                                <div class="col-xs-12 sidebar">                                	
+                                        <archives-sec></archives-sec>
+                                </div>
+
+                        
+                 </div>     
+                        
+                        
+			</div>
+       </div>  
+		
