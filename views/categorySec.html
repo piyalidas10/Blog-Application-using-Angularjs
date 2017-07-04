@@ -1,0 +1,8 @@
+<div class="widget">
+                                        <div class="widget-title-wrapper">
+                                            <h3 class="block-title">Categories</h3>
+                                        </div>    
+                                        <ul>
+                                            <li ng-repeat="(key, value) in blogposts | groupBy: 'post_category'"><a href="#/category/{{key}}">{{key}} <span>{{value.length}}</span></a></li>
+                                        </ul>
+                                    </div>
