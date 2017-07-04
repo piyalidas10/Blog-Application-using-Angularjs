@@ -1,0 +1,49 @@
+		       
+        <div class="container main">
+			
+            <div class="row">
+            
+            	<div class="col-sm-8">
+                        <article class="col-xs-12 blogPost blogDetails">
+                                
+                                <img src="{{blogDetails['post_image']}}" class="img-thumbnail img-responsive"/>
+                                <h3 class="header-title">{{blogDetails['post_title']}}</h3>
+                                <div class="inner-content">
+                                    <div class="body-post">{{blogDetails['post_body']}}</div>        
+                                    <h5>
+                                        <span class="pull-left">
+                                        		<i class="fa fa-calendar"> {{blogDetails['post_date'] | date:"MMM d, yyyy h:mm:ss a"}}</i> 
+                                                <i class="fa fa-tag cattag"> {{blogDetails['post_category']}}</i>
+                                        </span>
+                                        <span class="pull-right">
+                                            <i class="fa fa-comment comment"> {{blogDetails['comments'].length}}</i>
+                                            <i class="fa fa-heart like" ng-click="blogDetails['post_likes']=blogDetails['post_likes']+1"> {{blogDetails['post_likes']}}</i>
+                                        </span>
+                                    </h5>
+                                </div>    
+                        </article>
+                   </div>
+                   
+                    <div class="col-sm-4">
+                 	
+                    	<div class="row">
+                        
+                        		<div class="col-xs-12 sidebar">   
+                                    <recentpost-sec></recentpost-sec>
+								</div>
+                        
+                                <div class="col-xs-12 sidebar">                                	
+                                    <category-sec></category-sec>
+                                 </div>
+                                 
+                                <div class="col-xs-12 sidebar">                                	
+                                        <archives-sec></archives-sec>
+                                </div>
+
+                        
+                 </div>     
+                        
+                        
+			</div>
+       </div>  
+		
