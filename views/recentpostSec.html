@@ -1,0 +1,17 @@
+<div class="widget">
+                                        <div class="widget-title-wrapper">
+                                            <h3 class="block-title">Recent Posts</h3>
+                                        </div> 
+                                        <!--orderBy with a '-' to have descending order instead of ascending.--> 
+                                        <div class="recentPost clearfix" ng-repeat="post in blogposts | orderBy:'-post_date' | limitTo:3">  
+											<div class="row">
+                                       			<div class="col-sm-5"><a href="#/{{post['post_id']}}"><img src="{{post['post_image']}}" class="img-thumbnail"/></a></div>
+												<div class="col-sm-7">
+													<h3 class="entry-header"><a href="#/{{post['post_id']}}">{{post['post_title']}}</a></h3>
+													<h5>
+														<span class="pull-left"><i class="fa fa-calendar"></i> {{post['post_date'] | date:"MMM d, yyyy"}}</span>
+													</h5>
+												</div>
+											</div>    
+                                    </div> 
+                                 </div>
