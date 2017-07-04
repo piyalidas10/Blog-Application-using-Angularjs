@@ -1,0 +1,32 @@
+				<article ng-repeat="post in blogposts | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-xs-12 blogPost">
+                    	<a href="#/{{post['post_id']}}"><img src="{{post['post_image']}}" class="img-thumbnail img-responsive"/></a>
+                        <div class="inner-content">
+                            <div class="post-date">
+                                <span class="post-month">{{post['post_date'] | dateToISO | date:"MMM"}}</span>
+                                <span class="post-day">{{post['post_date'] | dateToISO | date:"d"}}</span>
+                            </div>
+                            <h3 class="entry-header"><a href="#/{{post['post_id']}}">{{post['post_title']}}</a></h3>
+                            <div class="body-post">{{post['post_body'] | limitTo:200}}...</div>        
+                            <h5>
+                                <span class="pull-left">
+                                		<i class="fa fa-clock-o"> {{post['post_date'] | dateToISO | date:"d MMM y, h:mm:ss a"}}</i> 
+                                        <i class="fa fa-tag cattag"> {{post['post_category']}}</i>
+                                </span>
+                                <span class="pull-right">
+                                    <i class="fa fa-comment comment"> {{post['comments'].length}}</i>
+                                    <i class="fa fa-heart like" ng-click="post['post_likes']=post['post_likes']+1"> {{post['post_likes']}}</i>
+                                </span>
+                            </h5>
+                        </div>    
+                </article>
+                
+               
+              <div class="btn-group pull-right">
+						<button class="btn btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+							Previous
+						</button>
+						<span>{{currentPage+1}}/{{numberOfPages()}}</span>
+						<button class="btn btn-primary" ng-disabled="currentPage >=blogposts.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+							Next
+						</button>
+					</div>
